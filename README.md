@@ -32,8 +32,9 @@ An Alexa Skill that helps you tune and plays chords on your guitar
 ### S3
 1. Go to the [S3 Amazon Management Console](https://console.aws.amazon.com/lambda/)
 2. Create a new bucket named `alexa-guitar-ace`.
-3. Go to Properties > Permissions > Edit CORS Configuration
-4. Enter this CORS config and save:
+3. Run `npm run deploy-resources` to deploy the resources
+4. Go to Properties > Permissions > Edit CORS Configuration
+5. Enter this CORS config and save:
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
@@ -43,7 +44,7 @@ An Alexa Skill that helps you tune and plays chords on your guitar
     </CORSRule>
 </CORSConfiguration>
 ```
-5. Run `npm run deploy-resources` to deploy the resources
+
 
 ## Deploy
 
