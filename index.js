@@ -41,7 +41,7 @@ var handlers = {
             if (!chord) {
                 this.emit(':ask', 'I do not know that chord.  Please say another chord', 'Say something like C 7.');
             } else {
-                this.emit(':tellWithCard', `<audio src="${chord.audioUri}"/>`, chord.name, "", { largeImageUrl: chord.imageUri, smallImageUrl: chord.imageUri });
+                this.emit(':tellWithCard', `<audio src="${chord.audioUri}"/>`, chord.name, chord.name, { largeImageUrl: chord.imageUri, smallImageUrl: chord.imageUri });
             }
         }
     },
