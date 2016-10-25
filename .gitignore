@@ -1,5 +1,6 @@
 dist/**/*.zip
 dist/**/*.mp3
+dist/**/*.png
 
 .DS_Store
 
