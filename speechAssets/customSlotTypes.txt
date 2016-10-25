@@ -1,11 +1,11 @@
 LIST_OF_ROOTS
-a
-b
-c
-d
-e
-f
-f
+A
+B
+C
+D
+E
+F
+G
 
 LIST_OF_TYPES
 major

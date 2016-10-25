@@ -15,6 +15,9 @@
                     "type": "LIST_OF_TYPES"
                 }
             ]
+        },
+        {
+            "intent": "AMAZON.HelpIntent"
         }
     ]
 }
