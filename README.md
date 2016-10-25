@@ -2,7 +2,7 @@
 
 An Alexa Skill that helps you tune and plays chords on your guitar
 
-## Setup
+## Initial Setup
 
 ### Lambda
 1. Go to the [Lambda AWS Management Console](https://console.aws.amazon.com/lambda/)
