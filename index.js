@@ -27,7 +27,7 @@ var handlers = {
         this.attributes['currentType'] = type;
 
         if (!root && !type) {
-            this.emit(':ask', 'What chord?', 'Just say the name of the chord.');
+            this.emit(':ask', 'Ok, what chord?', 'Just say the name of the chord.');
         } else if (root && guitarResources.hasRoot(root) && !type) {
             this.emit(':ask', `Sure, I can play the ${root} chord.  What type?`, `Say something like ${root} major or ${root} seven.`);
         } else {

@@ -4,6 +4,8 @@ An Alexa Skill that helps you tune and plays chords on your guitar
 
 ## Initial Setup
 
+Run `npm install`
+
 ### Lambda
 1. Go to the [Lambda AWS Management Console](https://console.aws.amazon.com/lambda/)
 2. Create Lambda function
