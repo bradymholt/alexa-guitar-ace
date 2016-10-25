@@ -1,0 +1,13 @@
+LIST_OF_ROOTS
+a
+b
+c
+d
+e
+f
+f
+
+LIST_OF_TYPES
+major
+minor
+seven

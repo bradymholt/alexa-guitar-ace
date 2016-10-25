@@ -8,11 +8,11 @@
   },
   "devDependencies": {},
   "scripts": {
-    "predeploy-audio": "for FILE in ./resources/*.mp3; do ffmpeg -y -i ${FILE} -ar 16000 -ab 48k -codec:a libmp3lame -ac 1 ./dist/audio/$(basename $FILE); done",
-    "predeploy-lambda": "zip -r dist/skill.zip . -x \\*.zip -x \\*.log",
-    "deploy-audio": "aws s3 sync ./dist/audio s3://alexa-guitar-ace/ --acl public-read --exclude .gitkeep",
+    "predeploy-resources": "for FILE in ./resources/*.mp3; do ffmpeg -y -i ${FILE} -ar 16000 -ab 48k -codec:a libmp3lame -ac 1 ./dist/resources/$(basename $FILE); done && cp ./resources/*.png ./dist/resources/",
+    "predeploy-lambda": "zip -r dist/skill.zip . -x \\*.zip \\*.log \\*.mp3 \\*.png",
+    "deploy-resources": "aws s3 sync ./dist/resources s3://alexa-guitar-ace/ --acl public-read --exclude .gitkeep",
     "deploy-lambda": "aws lambda update-function-code --function-name alexa-guitar-ace --zip-file fileb://./dist/skill.zip --region us-east-1",
-    "deploy": "npm run deploy-audio && npm run deploy-lambda"
+    "deploy": "npm run deploy-lambda"
   },
   "repository": {
     "type": "git",

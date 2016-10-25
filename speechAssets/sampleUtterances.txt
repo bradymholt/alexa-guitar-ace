@@ -1,0 +1,8 @@
+Tune tune my guitar
+PlayChord play {Root}
+PlayChord play {Root} {Type}
+PlayChord play {Type}
+PlayChord strum {Root}
+PlayChord strum {Root} {Type}
+PlayChord strum {Type}
+PlayChord {Root}
