@@ -1,0 +1,19 @@
+{
+  "deploy_settings": {
+    "default": {
+      "skill_id": "amzn1.ask.skill.c2e34850-9c4d-45c7-93cb-42c2ba658d17",
+      "was_cloned": false,
+      "merge": {
+        "skillManifest": {
+          "apis": {
+            "custom": {
+              "endpoint": {
+                "uri": "ask-custom-guitar-ace-default"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
