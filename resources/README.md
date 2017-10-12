@@ -1,1 +1,0 @@
-- Chord Sources: [https://www.8notes.com/guitar_chord_chart/c.asp](https://www.8notes.com/guitar_chord_chart/c.asp)
