@@ -1,9 +1,0 @@
-{
-  "name": "alexa-guitar-ace",
-  "license": "MIT",
-  "version": "1.0.0",
-  "main": "index.js",
-  "dependencies": {
-    "alexa-sdk": "^1.0.14"
-  }
-}
