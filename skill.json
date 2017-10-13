@@ -10,9 +10,7 @@
             "Alexa tell Guitar Ace to play a chord"
           ],
           "name": "Guitar Ace",
-          "description": "An Alexa Skill that helps you tune and plays chords on your guitar",
-          "smallIconUri": "https://s3.amazonaws.com/alexa-guitar-ace/icon-small.png",
-          "largeIconUri": "https://s3.amazonaws.com/alexa-guitar-ace/icon-large.png"
+          "description": "An Alexa Skill that helps you tune and plays chords on your guitar"
         }
       },
       "isAvailableWorldwide": true,
