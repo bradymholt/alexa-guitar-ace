@@ -1,9 +1,8 @@
 'use strict';
 var Alexa = require("alexa-sdk");
 
-// For detailed tutorial on how to making a Alexa skill,
+// For detailed tutorial on how t making a Alexa skill,
 // please visit us at http://alexa.design/build
-
 
 exports.handler = function(event, context) {
     var alexa = Alexa.handler(event, context);
