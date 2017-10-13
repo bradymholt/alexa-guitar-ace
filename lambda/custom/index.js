@@ -13,13 +13,7 @@ var handlers = {
     'LaunchRequest': function () {
         this.emit(':ask', 'Welcome to Guitar Ace. What do you want me to do?', 'Say something like play G Major or help me tune my guitar.');
     },
-    'Tune': function () {
-        this.emit(':tell', `Happy Tuning <audio src="${resources.getTuneAudioUri()}" />`);
-    },
     'PlayChord': function () {
-        //console.log("Request: " + JSON.stringify(this.event.request));
-        //console.log("Attributes: " + JSON.stringify(this.attributes));
-
         let slots = this.event.request.intent.slots;
         let root = slots['Root'].value || this.attributes['currentRoot'];
         let type = slots['Type'].value;
@@ -43,6 +37,9 @@ var handlers = {
                 this.emit(':tellWithCard', `<audio src="${chord.audioUri}"/>`, chord.name, chord.name, { largeImageUrl: chord.imageUri, smallImageUrl: chord.imageUri });
             }
         }
+    },
+    'Tune': function () {
+        this.emit(':tell', `Happy Tuning <audio src="${resources.getTuneAudioUri()}" />`);
     },
     'AMAZON.HelpIntent': function () {
         this.emit(':tell', 'Say something like play G Major or tune my guitar.');
