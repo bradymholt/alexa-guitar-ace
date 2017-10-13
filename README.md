@@ -1,6 +1,8 @@
+icons added to skill.json
+
 index.js:
 
-var resources = new (require('./resources'))('https://s3.amazonaws.com/alexa-guitar-ace');
+let resources = new (require('./resources'))('https://s3.amazonaws.com/alexa-guitar-ace');
 
     'PlayChord': function () {
 let chord = resources.getChord("C", "major");
