@@ -8,9 +8,6 @@
             "samples": [
               "play a chord"
             ]
-          },
-          {
-            "name": "AMAZON.HelpIntent"
           }
         ]
       }
