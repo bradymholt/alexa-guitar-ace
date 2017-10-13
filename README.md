@@ -5,6 +5,9 @@ index.js:
 'LaunchRequest': function () {
         this.emit('Welcome to Guitar Ace.');
 },
+'PlayChord': function () {
+        this.emit('I cannot play chords yet');
+},
 
 model:
 
