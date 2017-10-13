@@ -13,7 +13,15 @@ var handlers = {
         this.emit('Welcome to Guitar Ace.');
     },
     'PlayChord': function () {
-        let chord = resources.getChord("C", "major");
-        this.emit(':tellWithCard', `<audio src="${chord.audioUri}"/>`, chord.name, chord.name, { largeImageUrl: chord.imageUri, smallImageUrl: chord.imageUri });
+        let root = this.attributes['chordRoot'];
+        let type = this.attributes['chordType']
+        if (!root) {
+            this.emit(':ask', `What chord would you like to play?`);
+            this.attributes['chordRoot'] = "C";
+            this.attributes['chordType'] = "major";
+        } else {
+            let chord = resources.getChord(root, type);
+            this.emit(':tellWithCard', `<audio src="${chord.audioUri}"/>`, chord.name, chord.name, { largeImageUrl: chord.imageUri, smallImageUrl: chord.imageUri });
+        }
     }
 };
