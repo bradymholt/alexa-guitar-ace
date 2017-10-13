@@ -13,11 +13,5 @@ var handlers = {
     },
     'PlayChord': function () {
         this.emit('I cannot play chord yet.');
-    },
-    'AMAZON.HelpIntent': function () {
-        this.emit(':tell', 'Say play a chord.');
-    },
-    'Unhandled' : function() {
-        this.response.speak("Sorry, I didn't understand that.");
     }
 };
