@@ -10,7 +10,7 @@ exports.handler = function(event, context) {
 
 var handlers = {
     'LaunchRequest': function () {
-        this.emit('Welcome to Guitar Ace.');
+        this.emit(':tell', 'Welcome to Guitar Ace.');
     },
     'PlayChord': function () {
         let root = this.attributes['chordRoot'];
