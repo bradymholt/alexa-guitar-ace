@@ -13,5 +13,8 @@ var handlers = {
     },
     'PlayChord': function () {
         this.emit('I cannot play chord yet.');
-    }
+    },
+    'Unhandled': function () {
+        this.emit(':tell', "I do not understand");
+    },
 };
