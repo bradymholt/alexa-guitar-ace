@@ -1,101 +1,37 @@
+Step 4
 
-en-US.json:
+en-US.json
 
+(updated already)
 
-{
-    "name": "PlayChord",
-    "slots": [
-    {
-        "name": "Root",
-        "type": "LIST_OF_ROOTS"
-    },
-    {
-        "name": "Type",
-        "type": "LIST_OF_TYPES"
-    }
-    ],
-    "samples": [
-    "play a chord",
-    "play {Root}",
-    "play {Root} {Type}",
-    "play {Type}",
-    "strum {Root}",
-    "strum {Root} {Type}",
-    "strum {Type}",
-    "{Root} {Type}",
-    "{Type}"
-    ]
-},
+index.js
 
-"types": [
-        {
-          "values": [
-            {
-              "name": {
-                "value": "A"
-              }
-            },
-            {
-              "name": {
-                "value": "B"
-              }
-            },
-            {
-              "name": {
-                "value": "C"
-              }
-            },
-            {
-              "name": {
-                "value": "D"
-              }
-            },
-            {
-              "name": {
-                "value": "E"
-              }
-            },
-            {
-              "name": {
-                "value": "F"
-              }
-            },
-            {
-              "name": {
-                "value": "G"
-              }
-            }
-          ],
-          "name": "LIST_OF_ROOTS"
-        },
-        {
-          "values": [
-            {
-              "name": {
-                "value": "major"
-              }
-            },
-            {
-              "name": {
-                "value": "minor"
-              }
-            },
-            {
-              "name": {
-                "value": "seven"
-              }
-            }
-          ],
-          "name": "LIST_OF_TYPES"
-        }
-      ]
+'use strict';
+var Alexa = require("alexa-sdk");
+var resources = new (require('./resources'))('https://s3.amazonaws.com/alexa-guitar-ace');
 
-    index.js:
+exports.handler = function(event, context) {
+   var alexa = Alexa.handler(event, context);
+   alexa.registerHandlers(handlers);
+   alexa.execute();
+};
 
+var handlers = {
+   'LaunchRequest': function () {
+       this.emit(':tell', 'Welcome to Guitar Ace.');
+   },
+   'PlayChord': function () {
+       let slots = this.event.request.intent.slots;
+       let root = slots['Root'].value;
+       let type = slots['Type'].value;
 
-let slots = this.event.request.intent.slots;
-let root = slots['Root'].value || this.attributes['currentRoot'];
-let type = slots['Type'].value;
+       if (!root) {
+           this.emit(':ask', `What chord would you like to play?`);
+       } else {
+           let chord = resources.getChord(root, type);
+           this.emit(':tellWithCard', `<audio src="${chord.audioUri}"/>`, chord.name, chord.name, { largeImageUrl: chord.imageUri, smallImageUrl: chord.imageUri });
+       }
+   }
+};
 
- //this.attributes['chordRoot'] = "C";
- //this.attributes['chordType'] = "major";
+ask deploy
