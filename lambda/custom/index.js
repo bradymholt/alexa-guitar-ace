@@ -16,9 +16,9 @@ var handlers = {
         let root = this.attributes['chordRoot'];
         let type = this.attributes['chordType']
         if (!root) {
-            this.emit(':ask', `What chord would you like to play?`);
             this.attributes['chordRoot'] = "C";
             this.attributes['chordType'] = "major";
+            this.emit(':ask', `What chord would you like to play?`);
         } else {
             let chord = resources.getChord(root, type);
             this.emit(':tellWithCard', `<audio src="${chord.audioUri}"/>`, chord.name, chord.name, { largeImageUrl: chord.imageUri, smallImageUrl: chord.imageUri });
