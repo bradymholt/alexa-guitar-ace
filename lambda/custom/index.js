@@ -9,12 +9,9 @@ exports.handler = function(event, context) {
 
 var handlers = {
     'LaunchRequest': function () {
-        this.emit('Welcome to Guitar Ace.');
+        this.emit(':tell', 'Welcome to Guitar Ace.');
     },
     'PlayChord': function () {
-        this.emit('I cannot play chord yet.');
-    },
-    'Unhandled': function () {
-        this.emit(':tell', "I do not understand");
-    },
+        this.emit(':tell', 'I cannot play a chord yet.');
+    }
 };
