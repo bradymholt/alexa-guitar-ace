@@ -6,7 +6,8 @@
           {
             "name": "PlayChord",
             "samples": [
-              "play a chord"
+              "play a chord",
+              "C major"
             ]
           },
           {
