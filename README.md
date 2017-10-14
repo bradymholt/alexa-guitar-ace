@@ -1,23 +1,42 @@
-skill.json expanded
+Step 2
 
-index.js:
+en-US.json
 
-'LaunchRequest': function () {
-        this.emit('Welcome to Guitar Ace.');
-},
-'PlayChord': function () {
-        this.emit('I cannot play chords yet');
-},
-
-model:
-
-"invocationName": "guitar ace",
-...
 {
- "name": "PlayChord",
- "samples": [
-    "play a chord"
- ]
-}
+   "interactionModel": {
+     "languageModel": {
+       "invocationName": "guitar ace",
+       "intents": [
+         {
+           "name": "PlayChord",
+           "samples": [
+             "play a chord"
+           ]
+         }
+       ]
+     }
+   }
+ }
+
+index.js
+
+'use strict';
+var Alexa = require("alexa-sdk");
+
+exports.handler = function(event, context) {
+   var alexa = Alexa.handler(event, context);
+   alexa.registerHandlers(handlers);
+   alexa.execute();
+};
+
+var handlers = {
+   'LaunchRequest': function () {
+       this.emit(':tell', 'Welcome to Guitar Ace.');
+   },
+   'PlayChord': function () {
+       this.emit(':tell', 'I cannot play a chord yet.');
+   }
+};
+
 
 ask deploy
