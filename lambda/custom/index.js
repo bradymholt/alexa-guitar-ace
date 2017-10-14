@@ -1,10 +1,10 @@
 "use strict";
 
-var alexa = require('alexa-sdk');
+var Alexa = require('alexa-sdk');
 var resources = new (require('./resources'))('https://s3.amazonaws.com/alexa-guitar-ace');
 
 exports.handler = function (event, context, callback) {
-    var alexa = alexa.handler(event, context);
+    var alexa = Alexa.handler(event, context);
     alexa.registerHandlers(handlers);
     alexa.execute();
 };
